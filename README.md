@@ -6,7 +6,7 @@ Unofficial Tribal Wars planning panel userscript for [Tribal Wars](https://www.t
 
 War Room plans attacks, fills the rally point, and moves the cursor onto the Attack button — but it **never sends an attack on its own**. You press the key to send, every time. No auto-send, no auto-click, no bot behaviour.
 
-![War Room panel](docs/screenshot.png) <!-- add a screenshot later -->
+![War Room panel](img/screenshot.png) <!-- add a screenshot later -->
 
 ---
 
@@ -40,7 +40,7 @@ War Room plans attacks, fills the rally point, and moves the cursor onto the Att
    - [Violentmonkey](https://violentmonkey.github.io/) (open-source alternative)
    - [Greasemonkey](https://www.greasespot.net/) (Firefox only)
 2. Click the link below to install:
-   - **[Install War Room](https://github.com/YOUR_USERNAME/war-room/raw/main/war-room.user.js)**
+   - **[Install War Room](https://github.com/Quantum47Vision/war-room/raw/main/war-room.user.js)**
 3. Confirm the install in the popup.
 4. Open Tribal Wars — the ⚔ War Room button appears in the bottom-right corner.
 
@@ -79,3 +79,24 @@ Issues and pull requests are welcome. Please read the code carefully before subm
 ## 🙏 Acknowledgements
 
 Built for the Tribal Wars community. Not affiliated with or endorsed by Innogames.
+
+---
+
+## 📜 Changelog
+
+### v1.6.0 (Initial Public Release)
+*First public release of War Room.*
+
+**Core Features:**
+- **Farm Run:** Batch target queue, bulk paste, sort by distance, find nearby barbs, and a live return-timer board.
+- **Attack Forms:** 8 independent rally-point forms with fill & focus functionality.
+- **Attacker Intel:** Reverse-engineer incoming attacks to identify the slowest possible unit (noble/siege/cav) and name the attacker using public world data (including tribe tags).
+- **Attack Timing:** Work backwards from a desired arrival time to get exact send-times for every unit. Includes a **Noble Train calculator** for back-to-back nobles.
+- **Build Guide:** Reads current village levels and provides staged, role-specific (offense/defense) building and troop recruitment advice.
+- **World Data:** Load public `village.txt`, `player.txt`, and `ally.txt` to enable attacker naming and tribe resolution.
+
+**Quality of Life & Safety:**
+- **Data Safety:** Full JSON backup/restore (file download or text copy). Debounced saves with `beforeunload` flush to prevent data loss on navigation.
+- **Environment Detection:** Smart banners if the script manager is sandboxing the page or game data is missing.
+- **UX Polish:** Confirmation dialogs on destructive actions, night-bonus warnings, world-wrap support, and a draggable/resizable panel.
+- **Strict Safety:** Fills and aims only. **Never auto-sends.** You press Attack yourself.
